@@ -81,7 +81,7 @@
 <script async src="https://leadclic.my.site.com/lp/assets/scripts/external-form-handler-host.min.js" onload="SFDCFormHandler.init('https://leadclic.my.site.com/lp')"></script>
 
     <form id="MCZRL6AKZHHZG2JHAX3GZ24MWL4M" data-uma-forms="true">
-        <h2>Formulario de Contacto V7</h2>
+        <h2>Formulario de Contacto V8</h2>
 
         <div class="form-group">
             <label for="name">Name</label>
@@ -135,8 +135,7 @@
                 <option value="CORE">CORE</option>
                 <option value="We are Marketing">We are Marketing</option>
                 <option value="Campañas Virales">Campañas Virales</option>
-                <option value="CRM &amp; Marketing Automation to Connect">CRM &amp; Marketing Automation to Connect</option>
-            </select>
+                <option value="CRM Marketing Automation to Connect">CRM &amp; Marketing Automation to Connect</option>            </select>
         </div>
 
         <div class="checkbox-group">
@@ -179,15 +178,18 @@
 
         <button type="submit">Enviar Formulario</button>
     </form>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
+    <script>
+document.getElementById('MCZRL6AKZHHZG2JHAX3GZ24MWL4M').addEventListener('submit', function() {
     var sel = document.getElementById('Interesaso_en_WG');
-    Array.from(sel.options).forEach(function(opt) {
-        var ta = document.createElement('textarea');
-        ta.innerHTML = opt.value;
-        opt.value = ta.value;
-    });
-});
+    var map = {
+        'CRM Marketing Automation to Connect': 'CRM & Marketing Automation to Connect'
+    };
+    if (map[sel.value]) {
+        sel.value = map[sel.value];
+    }
+}, true); // true = capture phase, se ejecuta antes que el handler de Leadclic
 </script>
+
+    
 </body>
 </html>
