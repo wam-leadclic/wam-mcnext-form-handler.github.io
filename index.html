@@ -81,7 +81,7 @@
 <script async src="https://leadclic.my.site.com/lp/assets/scripts/external-form-handler-host.min.js" onload="SFDCFormHandler.init('https://leadclic.my.site.com/lp')"></script>
 
     <form id="MCZRL6AKZHHZG2JHAX3GZ24MWL4M" data-uma-forms="true">
-        <h2>Formulario de Contacto V6</h2>
+        <h2>Formulario de Contacto V7</h2>
 
         <div class="form-group">
             <label for="name">Name</label>
@@ -179,6 +179,15 @@
 
         <button type="submit">Enviar Formulario</button>
     </form>
-
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var sel = document.getElementById('Interesaso_en_WG');
+    Array.from(sel.options).forEach(function(opt) {
+        var ta = document.createElement('textarea');
+        ta.innerHTML = opt.value;
+        opt.value = ta.value;
+    });
+});
+</script>
 </body>
 </html>
